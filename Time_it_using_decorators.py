@@ -50,3 +50,35 @@ def operation():
     print(f"Sum of 1 to 1,000,000 is: {x}")
 
 operation()  
+
+# Help from ai
+import time
+
+# Define the decorator to measure execution time
+def time_it(func):
+    def wrapper(*args, **kwargs):
+        # Record the start time
+        start_time = time.time()
+        
+        # Call the original function and store the result
+        result = func(*args, **kwargs)
+        
+        # Record the end time
+        end_time = time.time()
+        
+        # Calculate and print the time taken
+        elapsed_time = end_time - start_time
+        print(f"Function '{func.__name__}' took {elapsed_time:.5f} seconds to run.")
+        
+        # Return the result of the original function
+        return result
+    return wrapper
+
+# Apply the time_it decorator to a function
+@time_it
+def sum_of_numbers():
+    total = sum(range(1, 1000001))  # Sum of numbers from 1 to 1 million
+    return total
+
+# Call the decorated function
+sum_of_numbers()
