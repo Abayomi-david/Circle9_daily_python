@@ -82,3 +82,30 @@ def sum_of_numbers():
 
 # Call the decorated function
 sum_of_numbers()
+
+# checking
+def f1():
+    print("i am here")
+
+def my_name():
+    print("Abayomi David")
+
+def f2(f):
+    f()
+
+f2(f1)
+f2(my_name)
+
+def sum(a,b):
+    print(a+b)
+
+sum(a=2,b=4)
+
+def name():
+    print("david")
+
+def name_caller(ww):
+    ww()
+
+
+name_caller(name)
